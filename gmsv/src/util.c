@@ -693,6 +693,7 @@ int bindlocalhost(int port) {
 int connectHost(char *hostname, unsigned short port) {
   struct sockaddr_in sock;
   struct hostent *hoste;
+  #define h_addr h_addr_list[0] /* for backward compatibility */
 
   memset(&sock, 0, sizeof(struct sockaddr_in));
   sock.sin_family = AF_INET;

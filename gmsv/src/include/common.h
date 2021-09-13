@@ -15,9 +15,9 @@
 #define BACKSLASH '\\'
 #define SPACE ' '
 
-#define min(x, y) ({typeof(x) __x=(x),__y=(y);(__x < __y) ? __x : __y; })
-#define max(x, y) ({typeof(x) __x=(x),__y=(y);(__x < __y) ? __y : __x; })
-#define swap(x, y)({typeof(x) __x=(y);(y)=(x);(x)=__x;})
+#define min(x, y) ({__typeof__(x) __x=(x),__y=(y);(__x < __y) ? __x : __y; })
+#define max(x, y) ({__typeof__(x) __x=(x),__y=(y);(__x < __y) ? __y : __x; })
+#define swap(x, y)({__typeof__(x) __x=(y);(y)=(x);(x)=__x;})
 #define SUCCESSFUL "successful"
 #define FAILED "failed"
 

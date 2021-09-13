@@ -9,8 +9,8 @@
 #include "main.h"
 #include "util.h"
 
-#define min(x, y) ({typeof(x) __x=(x),__y=(y);(__x < __y) ? __x : __y; })
-#define max(x, y) ({typeof(x) __x=(x),__y=(y);(__x < __y) ? __y : __x; })
+#define min(x, y) ({__typeof__(x) __x=(x),__y=(y);(__x < __y) ? __x : __y; })
+#define max(x, y) ({__typeof__(x) __x=(x),__y=(y);(__x < __y) ? __y : __x; })
 #define IS_2BYTEWORD(_a_) ( (char)(0x80) <= (_a_) && (_a_) <= (char)(0xFF) )
 #define PRIME 211
 
