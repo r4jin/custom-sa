@@ -797,7 +797,7 @@ int readFamily(char *dir)
 		snprintf(filename, sizeof(filename), "%s/Family.%d", dirname, i);
 		if (stat(filename, &s) < 0)continue;
 
-		if (!(s.st_mode & S_IFREG)){
+		if (!S_ISREG(s.st_mode)){
 			log("%s is not a regular file\n", filename);
 			continue;
 		}
@@ -950,7 +950,7 @@ int readFMPoint(char *dir)
    	   if (stat(filename, &s) < 0){
    	      continue;
    	   }
-   	   if (!(s.st_mode & S_IFREG))
+   	   if (!S_ISREG(s.st_mode))
    	   {
    	      log("%s is not a regular file\n", filename);
    	      continue;
@@ -1056,7 +1056,7 @@ int readFMSMemo(char *dir)
    	   if (stat(filename, &s) < 0){
    	      continue;
    	   }
-   	   if (!(s.st_mode & S_IFREG))
+   	   if (!S_ISREG(s.st_mode))
    	   {
    	      log("%s 不是正常文件\n", filename);
    	      continue;
@@ -3489,7 +3489,7 @@ int readOneFamilyFromTi( int ti)
 	snprintf(filename, sizeof(filename), "%s/Family.%d", familydir, ti);
 
 	if (stat(filename, &s) < 0)return 0;
-	if (!(s.st_mode & S_IFREG)){
+	if (!S_ISREG(s.st_mode)){
 		log("%s is not a regular file\n", filename);
 		return 0;
 	}

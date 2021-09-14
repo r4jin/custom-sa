@@ -6,7 +6,10 @@
 #include "acfamily.h"
 #include "char.h"
 #include "sasql.h"
+#include "recv.h"
 #include <signal.h>
+// ??
+// #include <bits/sigaction.h>
 #include <getopt.h>
 #include <netinet/tcp.h>
 #include "lock.h"
@@ -407,7 +410,7 @@ int main(int argc, char **argv) {
   LOAD_herolist();  // Syu ADD 排行榜NPC
 #endif
 
-  log("\n开始工作...\n");
+  log("\nstart working...\n");
 
   signal(SIGUSR1, sigusr1);  // Arminius 7.20 memory lock
   int itime = 0;

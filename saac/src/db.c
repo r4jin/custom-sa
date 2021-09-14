@@ -1150,7 +1150,7 @@ int dbRead(char *dir) {
             if( stat( filename, &s ) < 0 ){
                 continue;
             }
-            if( !( s.st_mode & S_IFREG ) ){
+            if(!S_ISREG(s.st_mode)){
                 continue;
             }
             
@@ -1196,7 +1196,7 @@ int dbRead(char *dir) {
             if( stat( filename, &s ) < 0 ){
                 continue;
             }
-            if( !(s.st_mode & S_IFREG )){
+            if(!S_ISREG(s.st_mode)){
                 continue;
             }
             fp = fopen( filename, "r" );

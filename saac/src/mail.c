@@ -416,7 +416,7 @@ int readMail( char *dir )
                 if( stat( filename, &s ) < 0 ){
                     continue;
                 }
-                if( !(s.st_mode & S_IFREG)) continue;
+                if( !S_ISREG(s.st_mode)) continue;
                 fp = fopen( filename, "r" );
                 if( fp == NULL ){
                     log( "不能打开文件 %s %s\n",filename,strerror(errno));

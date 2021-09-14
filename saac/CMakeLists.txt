@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
+add_compile_options(-std=c99)
+link_directories(/usr/lib64/mysql)
 
 file(COPY resources DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 include_directories(src/include)
